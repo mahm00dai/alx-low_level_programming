@@ -11,6 +11,6 @@ int main(void)
 
 	write(2, str, 59);
 
-	return 1;
+	return (1);
 }
 
