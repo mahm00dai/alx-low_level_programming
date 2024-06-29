@@ -12,7 +12,7 @@
 int main(void)
 {
 	unsigned long first = 1, second = 2, next;
-	unsigned long long sum = 0; 
+	unsigned long long sum = 0;
 
 	while (second <= 4000000)
 	{
@@ -24,7 +24,7 @@ int main(void)
 		second = next;
 	}
 
-	printf(sum);
+	printf("", sum);
 
 	return (0);
 }
