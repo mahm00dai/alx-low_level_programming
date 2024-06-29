@@ -23,7 +23,7 @@ int main(void)
 
 	}
 
-	printf("\nSum of even-valued terms: %lu\n", sum);
+	printf("sum);
 
 	return (0);
 }
