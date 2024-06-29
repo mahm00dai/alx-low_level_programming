@@ -13,6 +13,7 @@ int main(void)
 	/* Initialize first two Fibonacci numbers */
 	unsigned long first = 1, second = 2;
 	unsigned int count;
+	unsigned long next;
 
 	/* Print the first two Fibonacci numbers */
 	printf("%lu", first);
@@ -22,7 +23,7 @@ int main(void)
 		printf(", %lu", second);
 
 		/* Calculate the next Fibonacci number */
-		unsigned long next = first + second;
+		next = first + second;
 
 		/* Update first and second for the next iteration */
 		first = second;
