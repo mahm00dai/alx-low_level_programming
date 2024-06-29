@@ -7,7 +7,7 @@
  * Description: This function prints '+' if n is greater than zero,
  * '0' if n is zero, and '-' if n is less than zero.
  *
- * Return: 1 if n is greater than zero, 0 if n is zero, -1 if n is less than zero.
+ * Return: 1 if n is greater than zero, 0 if n is zero, -1.
  */
 int print_sign(int n)
 {
