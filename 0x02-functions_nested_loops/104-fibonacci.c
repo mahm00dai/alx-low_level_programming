@@ -15,16 +15,14 @@ int main(void)
 	unsigned int count;
 
 	/* Print the first two Fibonacci numbers */
-	printf("%lu, %lu", first, second);
-
-	/* Print the remaining Fibonacci numbers up to the 98th */
-	for (count = 3; count <= 98; ++count)
+	printf("%lu", first);
+	for (count = 2; count <= 98; ++count)
 	{
+		/* Print the Fibonacci number followed by ", " except for the last one */
+		printf(", %lu", second);
+
 		/* Calculate the next Fibonacci number */
 		unsigned long next = first + second;
-
-		/* Print the Fibonacci number followed by ", " except for the last one */
-		printf(", %lu", next);
 
 		/* Update first and second for the next iteration */
 		first = second;
