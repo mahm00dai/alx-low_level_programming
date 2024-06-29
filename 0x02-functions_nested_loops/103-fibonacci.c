@@ -24,7 +24,7 @@ int main(void)
 		second = next;
 	}
 
-	printf(sum);
+	printf("Sum of even-valued Fibonacci terms below 4,000,000: %lu\n", sum);
 
 	return (0);
 }
