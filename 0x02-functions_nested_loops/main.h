@@ -13,5 +13,8 @@ void print_alphabet_x10(void);
 /* Prototype for the _islower function */
 int _islower(int c);
 
+/* Add the prototype for _isalpha */
+int _isalpha(int c);
+
 #endif /* MAIN_H */
 
