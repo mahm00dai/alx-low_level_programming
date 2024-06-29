@@ -12,10 +12,9 @@ int main(void)
 	/* Number of Fibonacci numbers to print */
 	int count = 50;
 	unsigned long first = 1, second = 2, next;
+	int i;	/* Declare i here */
 
 	printf("%lu, %lu", first, second);
-	
-	int i;
 
 	for (i = 3; i <= count; ++i)
 	{
