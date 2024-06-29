@@ -9,17 +9,18 @@
  */
 int main(void)
 {
-	int count = 50;  /* Number of Fibonacci numbers to print */
-	unsigned long long first = 1, second = 2, next;
+	/* Number of Fibonacci numbers to print */
+	int count = 50;
+	unsigned long first = 1, second = 2, next;
 
-	printf("%llu, %llu", first, second);
-
+	printf("%lu, %lu", first, second);
+	
 	int i;
 
 	for (i = 3; i <= count; ++i)
 	{
 		next = first + second;
-		printf(", %llu", next);
+		printf(", %lu", next);
 		first = second;
 		second = next;
 	}
