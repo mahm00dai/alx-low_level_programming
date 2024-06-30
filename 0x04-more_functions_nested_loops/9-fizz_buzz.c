@@ -24,9 +24,6 @@ int main(void)
 		if (i < 100)
 			printf(" "); /* Separate each number/word by a space */
 
-		/* Print a newline after every 10 numbers for readability */
-		if (i % 10 == 0)
-			printf("\n");
 	}
 
 	printf("\n"); /* Ensure the output ends with a newline */
