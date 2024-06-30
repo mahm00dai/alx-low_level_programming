@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 /**
  * main - Entry point
@@ -8,32 +7,34 @@
  */
 int main(void)
 {
-	int n = 612852475143;
-	int largest = 0;
-	int i;
+	unsigned int n = 612852475;
+	unsigned int largest = 0;
+	unsigned int factor = 2;
 
 	/* Check for number of 2s */
-	while (n % 2 == 0)
+	while (n % factor == 0)
 	{
-		largest = 2;
-		n = n / 2;
+		largest = factor;
+		n = n / factor;
 	}
 
-	/* n must be odd at this point, thus a skip of 2 */
-	for (i = 3; i <= sqrt(n); i = i + 2)
+	/* Check for odd factors from 3 onwards */
+	factor = 3;
+	while (factor * factor <= n)
 	{
-		while (n % i == 0)
+		while (n % factor == 0)
 		{
-			largest = i;
-			n = n / i;
+			largest = factor;
+			n = n / factor;
 		}
+		factor += 2; /* Move to next odd number */
 	}
 
-	/* handle the case when n is a prime number greater than 2 */
-	if (n > 2)
+	/* Handle the case when n itself is a prime number */
+	if (n > 1)
 		largest = n;
 
-	printf("%d\n", largest);
+	printf("%u\n", largest);
 
 	return (0);
 }
