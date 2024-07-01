@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define PASSWORD_LENGTH 10	/* Adjust the length of the password as needed */
+
 /**
  * main - Entry point
  *
@@ -11,22 +13,21 @@ int main(void)
 {
 	/* Variables */
 	int i;
-	int length = 10;
-	char password[length + 1];
+	char password[PASSWORD_LENGTH + 1];	/* +1 for the null terminator */
 
-	srand(time(0));
+	srand(time(0));	/* Seed the random number generator with current time */
 
 	/* Generate random password */
-	for (i = 0; i < length; i++)
+	for (i = 0; i < PASSWORD_LENGTH; i++)
 	{
 		/* Generate random lowercase letters ('a' to 'z') */
 		password[i] = 'a' + rand() % 26;
 	}
 
-	password[length] = '\0';
+	password[PASSWORD_LENGTH] = '\0';	/* Null-terminate the string */
 
-	printf("%s\n", password);
+	printf("%s\n", password);	/* Print the generated password */
 
-	return (0);
+	return 0;
 }
 
