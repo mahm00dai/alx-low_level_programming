@@ -9,16 +9,16 @@
 char *leet(char *str)
 {
 	int i, j;
-	char leet_map[10] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-	char leet_letters[5] = {'o', 'l', 'e', 'a', 't'};
+	char leet_letters[] = "aAeEoOtTlL";
+	char leet_numbers[] = "4433007711";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; j < 5; j++)
+		for (j = 0; leet_letters[j] != '\0'; j++)
 		{
-			if (str[i] == leet_letters[j] || str[i] == leet_letters[j] - 'a' + 'A')
+			if (str[i] == leet_letters[j])
 			{
-				str[i] = leet_map[j + 2];
+				str[i] = leet_numbers[j];
 				break;
 			}
 		}
