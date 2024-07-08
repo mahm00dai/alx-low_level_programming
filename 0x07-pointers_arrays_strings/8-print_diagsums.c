@@ -5,14 +5,15 @@
  * @a: the matrix
  * @size: size of the matrix
  *
- * Return: void
+ * Description: Prints the sum of the diagonals of a square matrix.
+ * The primary diagonal runs from the top-left to the bottom-right,
+ * and the secondary diagonal runs from the top-right to the bottom-left.
  */
 void print_diagsums(int *a, int size)
 {
 	int i;
 	int sum_primary = 0;
 	int sum_secondary = 0;
-	char buffer[20];
 
 	for (i = 0; i < size; i++)
 	{
@@ -20,14 +21,17 @@ void print_diagsums(int *a, int size)
 		sum_secondary += *(a + i * size + (size - 1 - i));
 	}
 
-	int primary_length = sprintf(buffer, "%d", sum_primary);
+	char primary_sum_str[20];
+	int primary_length = sprintf(primary_sum_str, "%d", sum_primary);
 
-	buffer[primary_length] = ',';
-	int secondary = sprintf(buffer + primary_length + 1, " %d", sum_secondary);
+	primary_sum_str[primary_length] = ',';
 
-	for (i = 0; i < primary_length + secondary + 1; i++)
+	char secondary_sum_str[20];
+	int secondary_length = sprintf(secondary_sum_str, " %d", sum_secondary);
+
+	for (i = 0; i < primary_length + secondary_length + 1; i++)
 	{
-		_putchar(buffer[i]);
+		_putchar(primary_sum_str[i]);
 	}
 	_putchar('\n');
 }
