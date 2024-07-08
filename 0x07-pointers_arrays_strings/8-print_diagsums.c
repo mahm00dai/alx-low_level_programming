@@ -20,12 +20,12 @@ void print_diagsums(int *a, int size)
 		sum_secondary += *(a + i * size + (size - 1 - i));
 	}
 
-	int primary = sprintf(buffer, "%d", sum_primary);
+	int primary_length = sprintf(buffer, "%d", sum_primary);
 
 	buffer[primary_length] = ',';
-	int secondary = sprintf(buffer + primary + 1, " %d", sum_secondary);
+	int secondary = sprintf(buffer + primary_length + 1, " %d", sum_secondary);
 
-	for (i = 0; i < primary + secondary + 1; i++)
+	for (i = 0; i < primary_length + secondary + 1; i++)
 	{
 		_putchar(buffer[i]);
 	}
