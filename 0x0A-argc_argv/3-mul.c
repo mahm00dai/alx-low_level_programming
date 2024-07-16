@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - Multiplies two numbers passed as arguments.
+ * @argc: The number of arguments passed to the program.
+ * @argv: An array containing the arguments passed to the program.
+ *
+ * Return: 0 if successful, otherwise 1.
+ */
 int main(int argc, char *argv[])
 {
 	int num1, num2, result;
