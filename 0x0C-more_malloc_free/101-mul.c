@@ -1,6 +1,5 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-#include <ctype.h>
 
 void print_error_and_exit(void);
 int is_digit(char c);
@@ -16,19 +15,22 @@ void multiply(char *num1, char *num2);
  */
 int main(int argc, char *argv[])
 {
+	char *num1, *num2;
+	int i;
+
 	if (argc != 3)
 		print_error_and_exit();
 
-	char *num1 = argv[1];
-	char *num2 = argv[2];
+	num1 = argv[1];
+	num2 = argv[2];
 
-	for (int i = 0; num1[i]; i++)
+	for (i = 0; num1[i]; i++)
 	{
 		if (!is_digit(num1[i]))
 			print_error_and_exit();
 	}
 
-	for (int i = 0; num2[i]; i++)
+	for (i = 0; num2[i]; i++)
 	{
 		if (!is_digit(num2[i]))
 			print_error_and_exit();
@@ -44,8 +46,9 @@ int main(int argc, char *argv[])
 void print_error_and_exit(void)
 {
 	char error_msg[] = "Error\n";
+	int i;
 
-	for (int i = 0; error_msg[i]; i++)
+	for (i = 0; error_msg[i]; i++)
 		_putchar(error_msg[i]);
 	exit(98);
 }
@@ -86,27 +89,28 @@ void multiply(char *num1, char *num2)
 	int len1 = string_length(num1);
 	int len2 = string_length(num2);
 	int len = len1 + len2;
-	int *result = calloc(len, sizeof(int));
+	int *result;
+	int i, j, product, pos1, pos2, sum;
 
+	result = calloc(len, sizeof(int));
 	if (result == NULL)
 		print_error_and_exit();
 
-	for (int i = len1 - 1; i >= 0; i--)
+	for (i = len1 - 1; i >= 0; i--)
 	{
-		for (int j = len2 - 1; j >= 0; j--)
+		for (j = len2 - 1; j >= 0; j--)
 		{
-			int product = (num1[i] - '0') * (num2[j] - '0');
-			int pos1 = i + j;
-			int pos2 = i + j + 1;
-			int sum = product + result[pos2];
+			product = (num1[i] - '0') * (num2[j] - '0');
+			pos1 = i + j;
+			pos2 = i + j + 1;
+			sum = product + result[pos2];
 
 			result[pos1] += sum / 10;
 			result[pos2] = sum % 10;
 		}
 	}
 
-	int i = 0;
-
+	i = 0;
 	while (i < len && result[i] == 0)
 		i++;
 
